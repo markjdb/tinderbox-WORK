@@ -24,10 +24,10 @@
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 #
-# $MCom: portstools/tinderbox/lib/tc_command.sh,v 1.165 2013/01/20 16:31:04 marcus Exp $
+# $MCom: portstools/tinderbox/lib/tc_command.sh,v 1.166 2013/02/06 14:50:04 marcus Exp $
 #
 
-export _defaultUpdateHost="svn.freebsd.org"
+export _defaultUpdateHost="svn.FreeBSD.org"
 export _defaultUpdateType="SVN"
 
 #---------------------------------------------------------------------------
