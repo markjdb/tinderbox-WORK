@@ -24,17 +24,17 @@ latestPkgVersion()
         ;;
     esac
 
-    flist=$(ftp -a -V fbsd-ftp <<EOF
+    flist=$(ftp -a -V wtllab-ftp-1 <<__EOF__ | \
+            awk '/ svos-install-.*/ || / svbsd-install-.*/ {print $NF}'
 ls $FTP_PATH
-EOF
+__EOF__
 )
 
     for pat in $excludes; do
-        flist=$(echo $flist | grep -v -e "$pat")
+        flist=$(echo "$flist" | grep -v -e "$pat")
     done
 
-    vlist=$(echo $flist | awk -F ' ' '/svos-install-.*/ || /svbsd-install-.*/ {print $NF}' | \
-        xargs basename | sort | tail -n 1)
+    vlist=$(echo "$flist" | sort | tail -n 1)
 
     if [ -z "$latest" ]; then
         return
