@@ -864,6 +864,9 @@ buildJail () {
 	    echo "ERROR: world failed - see ${jailBase}/world.tmp"
 	    buildJailCleanup 1 ${jailName} ${J_SRCDIR}
 	fi
+    elif [ "${updateCmd}" = USER -a -x ${jailBase}/build.sh ]; then
+        eval ${jailBase}/build.sh > ${jailBase}/world.tmp 2>&1
+        execute_hook "postJailBuild" "JAIL=${jailName} DESTDIR=${J_TMPDIR} JAIL_ARCH=${jailArch} MY_ARCH=${myArch} JAIL_OBJDIR=${JAIL_OBJDIR} SRCBASE=${SRCBASE} PB=${pb} RC=${rc}"
     else
         # Make world
         echo "${jailName}: making world"
