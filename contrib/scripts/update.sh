@@ -34,8 +34,7 @@ __EOF__
         flist=$(echo "$flist" | grep -v -e "$pat")
     done
 
-    vlist=$(echo "$flist" | sort | tail -n 1)
-
+    latest=$(echo "$flist" | sort | tail -n 1)
     if [ -z "$latest" ]; then
         return
     fi
