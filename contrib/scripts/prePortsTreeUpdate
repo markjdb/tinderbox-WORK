@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Fill in certain identifiers for the jail build and update scripts.
+#
+# Tinderbox passes in the PB and PORTSTREE variables.
+
+USCRIPT=${PB}/portstrees/${PORTSTREE}/update.sh
+
+sed -i '' -e 's?^PORTSTREE=%%$?PORTSTREE='${USCRIPT}'?' $USCRIPT
