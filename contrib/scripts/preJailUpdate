@@ -16,7 +16,7 @@ case ${JAIL} in
     OSNAME=amd64-SVOS9
     OSTYPE=SVOS
     ;;
-8-svbsd_8-amd64)
+8-freebsd_8-amd64)
     OSNAME=amd64-FreeBSD8
     OSTYPE=FREEBSD
     ;;
@@ -28,11 +28,11 @@ case ${JAIL} in
     OSNAME=amd64-FreeBSD6
     OSTYPE=SVOS
     ;;
-6-svbsd_6-i386)
+6-freebsd_6-i386)
     OSNAME=freebsd6
     OSTYPE=FREEBSD
     ;;
-6-svbsd_6-amd64)
+6-freebsd_6-amd64)
     OSNAME=amd64-FreeBSD6
     OSTYPE=FREEBSD
     ;;
